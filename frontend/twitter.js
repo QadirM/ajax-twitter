@@ -1,11 +1,13 @@
 const FollowToggle = require('./follow_toggle');
-const testArray = [];
+const UsersSearch = require('./users_search');
 
-const thingToDo = () => {
+const ready = () => {
   $('.follow-toggle').each( (i, $el) => {
-    testArray.push(new FollowToggle($el));
+    new FollowToggle($el);
   });
-  console.log(testArray);
+  $('.users-search').each( (i, $el) => {
+    new UsersSearch($el);
+  });
 };
 
-$(thingToDo);
+$(ready);
