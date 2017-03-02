@@ -21,6 +21,15 @@ const APIUtil = {
       dataType: 'json',
       success: success
     })
+  ),
+
+  createTweet: (data) => (
+    $.ajax({
+      url: `/tweets`,
+      data: data,
+      method: 'POST',
+      dataType: 'json'
+    })
   )
 };
 

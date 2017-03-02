@@ -10,14 +10,13 @@ class UsersSearch {
   }
 
   handleInput() {
-    console.log(this.$input.val());
     APIUtil.searchUsers(this.$input.val(), this.renderResults.bind(this));
   }
 
   renderResults(result){
     this.$ul.empty();
     result.forEach( user => {
-      let button = $(`<button type="button" name="button"></button>`);
+      let button = $(`<button type="button"></button>`);
       button.data("initial-follow-state", user.followed ? "followed" : "unfollowed");
       button.data("user-id", user.id);
       new FollowToggle(button);
